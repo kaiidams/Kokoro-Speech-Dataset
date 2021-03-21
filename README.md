@@ -26,7 +26,6 @@ The audio clips were split and transcripts were aligned automatically by
 100 samples were verified by a native speaker
 [Katsuya Iida](katsuya.iida@gmail.com).
 
-<<<<<<< HEAD
 ## File Format
 
 Metadata is provided in transcripts.txt. This file consists of one record per line,
@@ -48,16 +47,6 @@ Max duration: 14.745 sec
 Mean duration: 5.001 sec
 Total duration: 51 hours
 ```
-=======
-## Statistics
-
-| --- | --- |
-| Min duration | 3.007 sec |
-| Max duration | 14.745 sec |
-| Mean duration | 5.001 sec |
-| Total clips | 36,860 |
-| Total duration | 51 hours |
->>>>>>> origin/main
 
 ## How to get the data
 
