@@ -26,6 +26,36 @@ The audio clips were split and transcripts were aligned automatically by
 100 samples were verified by a native speaker
 [Katsuya Iida](katsuya.iida@gmail.com).
 
+## Statistics
+
+| --- | --- |
+| Min duration | 3.007 sec |
+| Max duration | 14.745 sec |
+| Mean duration | 5.001 sec |
+| Total clips | 36,860 |
+| Total duration | 51 hours |
+
+## How to get the data
+
+Because of its large data size of the dataset, audio files are not
+included in this repository, but the transcripts and audio split
+points are included.
+
+To get all WAV files of the dataset, run 
+
+```
+$ download.sh
+```
+
+to download the audio files from archive.org and extract them. Run
+
+```
+$ pip install torchaudio
+$ python extract.py
+```
+
+to get all files under `./output` directory.
+
 ## Books
 
 The dataset contains recordings from these books read by
