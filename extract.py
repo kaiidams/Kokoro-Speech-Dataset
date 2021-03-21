@@ -1,5 +1,4 @@
 import os
-from glob import glob
 import torchaudio
 
 output_dir = "./output"
@@ -41,8 +40,10 @@ for k, v in data.items():
             torchaudio.save(output_file, y, expected_sample_rate)
 
 all_transcript_file = os.path.join(output_dir, 'transcripts.txt')
-with open(transcript_file, 'wt') as all_transcript_f:
-    for transcript_file in sorted(glob('data/*.transcript.txt')):
+with open(all_transcript_file, 'wt') as all_transcript_f:
+    for k, v in data.items():
+        transcript_file = f'data/{k}.transcript.txt'
         with open(transcript_file, 'rt') as transcript_f:
-            for line in transcript_file:
+            for line in transcript_f:
                 all_transcript_f.write(line)
+
