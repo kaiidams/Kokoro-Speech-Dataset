@@ -26,14 +26,27 @@ The audio clips were split and transcripts were aligned automatically by
 100 samples were verified by a native speaker
 [Katsuya Iida](katsuya.iida@gmail.com).
 
+## File Format
+
+Metadata is provided in transcripts.txt. This file consists of one record per line,
+delimited by the pipe character (0x7c). The fields are:
+
+- ID: this is the name of the corresponding .wav file
+- Transcription: Kanji-kana mixture text spoken by the reader (UTF-8)
+- Reading: Romanized text spoken by the reader (UTF-8)
+- Score: Alighment score. Better closer to zero. 
+
+Each audio file is a single-channel 16-bit PCM WAV with a sample rate of 22050 Hz.
+
 ## Statistics
 
-| --- | --- |
-| Min duration | 3.007 sec |
-| Max duration | 14.745 sec |
-| Mean duration | 5.001 sec |
-| Total clips | 36,860 |
-| Total duration | 51 hours |
+```
+Total clips: 36,860
+Min duration: 3.007 sec
+Max duration: 14.745 sec
+Mean duration: 5.001 sec
+Total duration: 51 hours
+```
 
 ## How to get the data
 
