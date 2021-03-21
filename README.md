@@ -26,6 +26,11 @@ The audio clips were split and transcripts were aligned automatically by
 100 samples were verified by a native speaker
 [Katsuya Iida](katsuya.iida@gmail.com).
 
+## Sample data
+
+- Download
+[Randomly sampled 100 clips](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/0.1/kokoro-sample-20210321.zip).
+
 ## File Format
 
 Metadata is provided in transcripts.txt. This file consists of one record per line,
