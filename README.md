@@ -45,11 +45,26 @@ Each audio file is a single-channel 16-bit PCM WAV with a sample rate of 22050 H
 ## Statistics
 
 ```
-Total clips: 36,860
-Min duration: 3.007 sec
-Max duration: 14.745 sec
-Mean duration: 5.001 sec
-Total duration: 51 hours
+Large:
+Total clips: 34958
+Min duration: 3.007 secs
+Max duration: 14.745 secs
+Mean duration: 4.978 secs
+Total duration: 48:20:24
+
+Small:
+Total clips: 8812
+Min duration: 3.007 secs
+Max duration: 14.431 secs
+Mean duration: 4.951 secs
+Total duration: 12:07:12
+
+Tiny:
+Total clips: 285
+Min duration: 3.019 secs
+Max duration: 9.462 secs
+Mean duration: 4.871 secs
+Total duration: 00:23:08
 ```
 
 ## How to get the data
@@ -106,7 +121,7 @@ The dataset contains recordings from these books read by
 
 ## Changelog
 
-- v1.0 Current release
+- v0.2 Current release
 
 ## License
 
