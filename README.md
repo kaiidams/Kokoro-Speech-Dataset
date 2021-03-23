@@ -39,7 +39,6 @@ delimited by the pipe character (0x7c). The fields are:
 - ID: this is the name of the corresponding .wav file
 - Transcription: Kanji-kana mixture text spoken by the reader (UTF-8)
 - Reading: Romanized text spoken by the reader (UTF-8)
-- Score: Alighment score. Better closer to zero. 
 
 Each audio file is a single-channel 16-bit PCM WAV with a sample rate of 22050 Hz.
 
