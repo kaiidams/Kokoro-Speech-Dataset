@@ -12,7 +12,7 @@ def read_params_list(data_dir, split):
     return [
         params
         for params in params_list
-        if (split == 'full') or (split in params['splits'].split())
+        if (split == 'large') or (split in params['splits'].split())
     ]
 
 def check_data_directory(data_dir, params_list):
@@ -45,6 +45,8 @@ def dump_script(data_dir, params_list):
 
 def extract_wav_files(data_dir, params_list, sample_rate, output_dir):
 
+    max_int16 = torch.iinfo(torch.int16).max
+
     for params in params_list:
         id_ = params['id']
         metadata_file = os.path.join('data', f'{id_}.metadata.txt')
@@ -58,15 +60,15 @@ def extract_wav_files(data_dir, params_list, sample_rate, output_dir):
                 audio_start, audio_end = int(audio_start), int(audio_end)
                 if current_file != audio_file:
                     file = os.path.join(audio_dir, audio_file)
-                    print(f'Reading {file}')
+                    print(f'\rReading {file}', end='')
                     y, sr = torchaudio.load(file)
                     assert len(y.shape) == 2 and y.shape[0] == 1
+                    assert y.dtype == torch.float32
                     assert sr == sample_rate
-                    y = (y * 32767.0 / torch.max(torch.abs(y))).to(torch.int16) 
+                    y = (y * max_int16 / torch.max(torch.abs(y))).to(torch.int16) 
                     current_file = audio_file
                     current_audio = y
                 output_file = os.path.join(output_dir, f'{id_}.wav')
-                print(f'Writing {output_file}')
                 y = current_audio[:, audio_start:audio_end]
                 torchaudio.save(output_file, y, sample_rate)
 
@@ -86,6 +88,7 @@ def write_metafile(data_dir, params_list, output_dir):
 def main(args):
 
     params_list = read_params_list(args.data_dir, args.split)
+    assert params_list
 
     if not check_data_directory(args.data_dir, params_list):
         dump_script(args.data_dir, params_list)
@@ -98,11 +101,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--data-dir', default='data', help='Data directory')
     parser.add_argument('--output-dir', default='output', help='Output directory')
-    parser.add_argument('--split', default='tiny', help='Split name to extract')
+    parser.add_argument('--split', default='tiny', choices=['tiny', 'small', 'large'],
+        help='Split name to extract')
     parser.add_argument('--sample-rate', type=int, default=22050, help='Expected sampling rate')
 
     args = parser.parse_args()
     main(args)
-
-#args = argparse.Namespace(split='tiny', data_dir='data', output_dir='output')
-#main(args)
