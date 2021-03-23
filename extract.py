@@ -45,6 +45,7 @@ def dump_script(data_dir, params_list):
 
 def extract_wav_files(data_dir, params_list, sample_rate, output_dir):
 
+    os.makedirs(os.path.join(output_dir, 'wavs'), exist_ok=True)
     max_int16 = torch.iinfo(torch.int16).max
 
     for params in params_list:
@@ -93,7 +94,6 @@ def main(args):
     if not check_data_directory(args.data_dir, params_list):
         dump_script(args.data_dir, params_list)
     else:
-        os.makedirs(args.output_dir, exist_ok=True)
         extract_wav_files(args.data_dir, params_list, args.sample_rate, args.output_dir)
         write_metafile(args.data_dir, params_list, args.output_dir)
 
