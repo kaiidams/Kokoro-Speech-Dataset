@@ -1,49 +1,108 @@
 import os
+import json
 import torchaudio
+import torch
+import re
+import argparse
 
-output_dir = "./output"
-expected_sample_rate = 22050
-os.makedirs(output_dir, exist_ok=True)
+def read_params_list(data_dir, split):
+    with open(os.path.join(data_dir, 'index.json')) as f:
+        params_list = json.load(f)
 
-data = {
-    'botchan-by-soseki-natsume-2': 'botchan_1310_librivox_64kb_mp3',  
-    'gan-by-ogai-mori': 'gan_1311_librivox_64kb_mp3',  
-    'gongitsune-by-nankichi-niimi': 'gongitsune_um_librivox_64kb_mp3',  
-    'inakakyoshi-by-katai-tayama': 'inakakyoshi_1311_librivox_64kb_mp3',  
-    'kokoro-by-soseki-natsume': 'kokoro_natsume_um_librivox_64kb_mp3',  
-    'kusamakura-by-soseki-natsume': 'kusamakura_1311_librivox_64kb_mp3',  
-    'meian-by-soseki-natsume': 'meian_1403_librivox_64kb_mp3',  
-    'nowaki-by-soseki-natsume': 'nowaki_um_librivox_64kb_mp3',  
-}
+    return [
+        params
+        for params in params_list
+        if (split == 'full') or (split in params['splits'].split())
+    ]
 
-for k, v in data.items():
-    source_file = f'data/{k}.source.txt'
-    audio_dir = f'data/{v}'
-    with open(source_file, 'rt') as source_f:
-        current_file = None
-        current_audio = None
-        for line in source_f:
-            parts = line.rstrip('\r\n').split('|')
-            id_, audio_file, audio_start, audio_end = parts
-            audio_start, audio_end = int(audio_start), int(audio_end)
-            if current_file != audio_file:
-                file = os.path.join(audio_dir, audio_file)
-                print(f'Reading {file}')
-                y, sr = torchaudio.load(file)
-                assert len(y.shape) == 2 and y.shape[0] == 1
-                assert sr == expected_sample_rate
-                current_file = audio_file
-                current_audio = y
-            output_file = os.path.join(output_dir, f'{id_}.wav')
-            print(f'Writing {output_file}')
-            y = current_audio[:, audio_start:audio_end]
-            torchaudio.save(output_file, y, expected_sample_rate)
+def check_data_directory(data_dir, params_list):
+    isok = True
+    for params in params_list:
+        id_ = params['id']
+        audio_dir = os.path.join(data_dir, f'{id_}')
+        if not os.path.isdir(audio_dir):
+            print(f"`{audio_dir}' is missing.")
+            isok = False
+    if isok:
+        print("All audio directories exist.")
+    return isok
 
-all_transcript_file = os.path.join(output_dir, 'transcripts.txt')
-with open(all_transcript_file, 'wt') as all_transcript_f:
-    for k, v in data.items():
-        transcript_file = f'data/{k}.transcript.txt'
-        with open(transcript_file, 'rt') as transcript_f:
-            for line in transcript_f:
-                all_transcript_f.write(line)
+def dump_script(data_dir, params_list):
+    print('Run these commands to download archives.')
+    print()
 
+    print(f'cd {data_dir}')
+
+    for params in params_list:
+        archive_url = params['archive_url']
+        print(f'curl -LO {archive_url}')
+
+    for params in params_list:
+        id_ = params['id']
+        archive_url = params['archive_url']
+        archive_file = os.path.basename(archive_url)
+        print(f"unzip {archive_file} -d {id_}")
+
+def extract_wav_files(data_dir, params_list, sample_rate, output_dir):
+
+    for params in params_list:
+        id_ = params['id']
+        metadata_file = os.path.join('data', f'{id_}.metadata.txt')
+        audio_dir = os.path.join('data', f'{id_}')
+        with open(metadata_file, 'rt') as metadata_f:
+            current_file = None
+            current_audio = None
+            for line in metadata_f:
+                parts = line.rstrip('\r\n').split('|')
+                id_, audio_file, audio_start, audio_end, _, _ = parts
+                audio_start, audio_end = int(audio_start), int(audio_end)
+                if current_file != audio_file:
+                    file = os.path.join(audio_dir, audio_file)
+                    print(f'Reading {file}')
+                    y, sr = torchaudio.load(file)
+                    assert len(y.shape) == 2 and y.shape[0] == 1
+                    assert sr == sample_rate
+                    y = (y * 32767.0 / torch.max(torch.abs(y))).to(torch.int16) 
+                    current_file = audio_file
+                    current_audio = y
+                output_file = os.path.join(output_dir, f'{id_}.wav')
+                print(f'Writing {output_file}')
+                y = current_audio[:, audio_start:audio_end]
+                torchaudio.save(output_file, y, sample_rate)
+
+def write_metafile(data_dir, params_list, output_dir):
+
+    metadata_file = os.path.join(output_dir, 'metadata.csv')
+    with open(metadata_file, 'wt') as metadata_f:
+        for params in params_list:
+            id_ = params['id']
+            metadata_file = os.path.join('data', f'{id_}.metadata.txt')
+            with open(metadata_file, 'rt') as transcript_f:
+                for line in transcript_f:
+                    parts = line.rstrip('\r\n').split('|')
+                    id_, _, _, _, text, voca = parts
+                    metadata_f.write(f'{id_}|{text}|{voca}\n')
+
+def main(args):
+
+    params_list = read_params_list(args.data_dir, args.split)
+
+    if not check_data_directory(args.data_dir, params_list):
+        dump_script(args.data_dir, params_list)
+    else:
+        os.makedirs(args.output_dir, exist_ok=True)
+        extract_wav_files(args.data_dir, params_list, args.sample_rate, args.output_dir)
+        write_metafile(args.data_dir, params_list, args.output_dir)
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--data-dir', default='data', help='Data directory')
+    parser.add_argument('--output-dir', default='output', help='Output directory')
+    parser.add_argument('--split', default='tiny', help='Split name to extract')
+    parser.add_argument('--sample-rate', type=int, default=22050, help='Expected sampling rate')
+
+    args = parser.parse_args()
+    main(args)
+
+#args = argparse.Namespace(split='tiny', data_dir='data', output_dir='output')
+#main(args)

@@ -1,7 +1,7 @@
 # Kokoro Speech Dataset
 
 Kokoro Speech Dataset is a public domain Japanese speech dataset.
-It contains around 36,860 short audio clips of a single speaker reading 8 novel books.
+It contains around 36,860 short audio clips of a single speaker reading 9 novel books.
 The format of the metadata is very similar to
 [LJ Speech](https://keithito.com/LJ-Speech-Dataset/) so that the dataset is compatible
 with modern speech synthesis systems.
@@ -69,10 +69,17 @@ to download the audio files from archive.org and extract them. Run
 
 ```
 $ pip install torchaudio
-$ python extract.py
+$ python extract.py --split tiny
 ```
 
-to get all files under `./output` directory.
+to get all files for tiny set under `./output` directory. RUn
+
+```
+$ pip install torchaudio
+$ python extract.py --split full
+```
+
+to get all files for full set under `./output` directory.
 
 ## Books
 
@@ -94,7 +101,9 @@ The dataset contains recordings from these books read by
 - [雁 (Gan)](https://librivox.org/gan-by-ogai-mori/) 03:41:31
     [Online text](http://www.aozora.gr.jp/cards/000129/files/45224_19919.html)
 - [ごん狐 (Gon gitsune)](https://librivox.org/gongitsune-by-nankichi-niimi/) 0:15:42
-    [Online text](https://librivox.org/gongitsune-by-nankichi-niimi/)
+    [Online text](http://www.aozora.gr.jp/cards/000121/files/628_14895.html)
+- [コーカサスの禿鷹 (Caucasus no Hagetaka)](https://librivox.org/caucasus-no-hagetaka-by-yoshio-toyoshima/) 0:13:04
+    [Online text](http://www.aozora.gr.jp/cards/000906/files/42633_22951.html)
 
 ## Changelog
 
