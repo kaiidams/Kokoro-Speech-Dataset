@@ -1,7 +1,7 @@
 # Kokoro Speech Dataset
 
 Kokoro Speech Dataset is a public domain Japanese speech dataset.
-It contains around 36,860 short audio clips of a single speaker reading 9 novel books.
+It contains around 34,958 short audio clips of a single speaker reading 9 novel books.
 The format of the metadata is very similar to
 [LJ Speech](https://keithito.com/LJ-Speech-Dataset/) so that the dataset is compatible
 with modern speech synthesis systems.
