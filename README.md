@@ -1,7 +1,7 @@
 # Kokoro Speech Dataset
 
 Kokoro Speech Dataset is a public domain Japanese speech dataset.
-It contains around 36,860 short audio clips of a single speaker reading 9 novel books.
+It contains around 34,958 short audio clips of a single speaker reading 9 novel books.
 The format of the metadata is very similar to
 [LJ Speech](https://keithito.com/LJ-Speech-Dataset/) so that the dataset is compatible
 with modern speech synthesis systems.
@@ -29,7 +29,7 @@ The audio clips were split and transcripts were aligned automatically by
 ## Sample data
 
 - Download
-[Randomly sampled 100 clips](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/0.1/kokoro-sample-20210321.zip).
+[Randomly sampled 100 clips](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.0/kokoro-sample-v1_0.zip).
 
 ## File Format
 
@@ -79,21 +79,36 @@ To get all WAV files of the dataset, run
 $ download.sh
 ```
 
-to download the audio files from archive.org and extract them. Run
+to download the audio files from archive.org and extract them. Then run
 
 ```
 $ pip install torchaudio
-$ python extract.py --split tiny
+$ python extract.py --size tiny
 ```
 
-to get all files for tiny set under `./output` directory. RUn
+to get files for the tiny set under `./output` directory. RUn
 
 ```
 $ pip install torchaudio
-$ python extract.py --split full
+$ python extract.py --size large
 ```
 
-to get all files for full set under `./output` directory.
+to get files for the large set under `./output` directory.
+
+## Pretrained Tacotron model
+
+Pretrained [Tacotron](https://github.com/keithito/tacotron)
+model trained with Kokoro Speech Dataset
+and audio samples are available.
+The model was trained for 21K steps with the small set.
+According to the Tacotron author,
+"Speech started to become intelligible around 20K steps" with
+LJ Speech Dataset.
+Audio samples reads the first few sentences from Gon Gitsune
+which is not included in the small set.
+
+- [Audio Samples](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.0/tacotron-kokoro-samples.zip)
+- [Pretrained model](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.0/tacotron-kokoro-20210324.zip)
 
 ## Books
 
@@ -121,9 +136,10 @@ The dataset contains recordings from these books read by
 
 ## Changelog
 
-- v0.2 Current release
+- v1.0 Current release
 
 ## License
 
 This dataset is in the public domain in the USA (and most likely other countries as well).
-There are no restrictions on its use. For more information, please see: librivox.org/pages/public-domain.
+There are no restrictions on its use. For more information, please see: 
+[librivox.org/pages/public-domain](https://librivox.org/pages/public-domain).
