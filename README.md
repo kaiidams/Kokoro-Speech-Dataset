@@ -1,8 +1,8 @@
 # Kokoro Speech Dataset
 
 Kokoro Speech Dataset is a public domain Japanese speech dataset.
-It contains around 34,958 short audio clips of a single speaker reading 9 novel books.
-The format of the metadata is very similar to
+It contains 34,958 short audio clips of a single speaker reading 9 novel books.
+The format of the metadata is similar to that of
 [LJ Speech](https://keithito.com/LJ-Speech-Dataset/) so that the dataset is compatible
 with modern speech synthesis systems.
 
@@ -42,6 +42,9 @@ delimited by the pipe character (0x7c). The fields are:
 Each audio file is a single-channel 16-bit PCM WAV with a sample rate of 22050 Hz.
 
 ## Statistics
+
+The dataset is provided with different sizes, `large`, `small`, `tiny`. `small` and `tiny`
+don't share same clips. `large` contains all available clips, including `small` and `tiny`.
 
 ```
 Large:
