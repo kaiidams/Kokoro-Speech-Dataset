@@ -72,7 +72,7 @@ Total duration: 00:23:08
 ## How to get the data
 
 Because of its large data size of the dataset, audio files are not
-included in this repository, but the metadata are included.
+included in this repository, but the metadata is included.
 
 To make .wav files of the dataset, run 
 
