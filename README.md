@@ -16,21 +16,19 @@ Readings are estimated by
 [MeCab](https://taku910.github.io/mecab/)
 and
 [UniDic Lite](https://pypi.org/project/unidic-lite/)
-from Kanji-Kana mixture writing system.
-Readings are in romanized writing system
+from Kanji-Kana mixture text.
+Readings are in romanized text
 which is similar to the format used by
 [Julius](https://github.com/julius-speech/julius).
 
 The audio clips were split and transcripts were aligned automatically by
 [Voice100](https://github.com/kaiidams/voice100).
-100 samples were verified by a native speaker
-[Katsuya Iida](katsuya.iida@gmail.com).
 
 ## Sample data
 
 [Listen](https://kaiidams.github.io/Kokoro-Speech-Dataset/samples.html)
 from your browser or download
-[Randomly sampled 100 clips](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.0/kokoro-sample-v1_0.zip).
+[randomly sampled 100 clips](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.0/kokoro-sample-v1_0.zip).
 
 ## File Format
 
