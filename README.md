@@ -87,7 +87,7 @@ $ pip install torchaudio
 $ python extract.py --size tiny
 ```
 
-this shows a shell script example to download MP3 audio files
+This prints a shell script example to download MP3 audio files
 from archive.org and extract them if you haven't done it already.
 
 After doing so, run the command again
