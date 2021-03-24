@@ -28,7 +28,7 @@ The audio clips were split and transcripts were aligned automatically by
 
 [Listen](https://kaiidams.github.io/Kokoro-Speech-Dataset/samples.html)
 from your browser or download
-[randomly sampled 100 clips](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.0/kokoro-sample-v1_0.zip).
+[randomly sampled 100 clips](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.0/kokoro-speech-v1_0-sample.zip).
 
 ## File Format
 
