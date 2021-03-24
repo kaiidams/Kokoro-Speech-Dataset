@@ -72,12 +72,12 @@ Total duration: 00:23:08
 ## How to get the data
 
 Because of its large data size of the dataset, audio files are not
-included in this repository, but the metadata are included.
+included in this repository, but the metadata is included.
 
 To make .wav files of the dataset, run 
 
 ```
-$ download.sh
+$ bash download.sh
 ```
 
 to download the metadata from the project page. Then run
@@ -98,7 +98,7 @@ $ python3 extract.py --size tiny
 
 to get files for `tiny` under `./output` directory.
 
-You can give another size name to the `--size` options to get
+You can give another size name to the `--size` option to get
 dataset of the size.
 
 ## Pretrained Tacotron model
@@ -113,7 +113,7 @@ LJ Speech Dataset.
 Audio samples reads the first few sentences from Gon Gitsune
 which is not included in `small`.
 
-- [Audio Samples](https://kaiidams.github.io/Kokoro-Speech-Dataset/samples.html)
+- [Audio Samples](https://kaiidams.github.io/Kokoro-Speech-Dataset/tacotron.html)
 - [Pretrained model](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.0/tacotron-kokoro-20210324.zip)
 
 ## Books
