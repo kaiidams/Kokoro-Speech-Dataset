@@ -45,14 +45,14 @@ Each audio file is a single-channel 16-bit PCM WAV with a sample rate of 22050 H
 
 ```
 Large:
-Total clips: 34,958
+Total clips: 34958
 Min duration: 3.007 secs
 Max duration: 14.745 secs
 Mean duration: 4.978 secs
 Total duration: 48:20:24
 
 Small:
-Total clips: 8,812
+Total clips: 8812
 Min duration: 3.007 secs
 Max duration: 14.431 secs
 Mean duration: 4.951 secs
