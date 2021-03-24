@@ -98,7 +98,7 @@ $ python3 extract.py --size tiny
 
 to get files for `tiny` under `./output` directory.
 
-You can give another size name to the `--size` options to get
+You can give another size name to the `--size` option to get
 dataset of the size.
 
 ## Pretrained Tacotron model
