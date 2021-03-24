@@ -10,11 +10,11 @@ def read_params_list(data_dir, split):
     return [
         params
         for params in params_list
-        if (split == 'large') or (split in params['splits'].split())
+        if (split == 'large') or (split in params['sizes'].split())
     ]
 
 def main(args):
-    params_list = read_params_list(args.data_dir, args.split)
+    params_list = read_params_list(args.data_dir, args.size)
 
     audio_lens = []
     for params in params_list:
@@ -41,9 +41,8 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--data-dir', default='data', help='Data directory')
-    parser.add_argument('--output-dir', default='output', help='Output directory')
-    parser.add_argument('--split', default='tiny', choices=['tiny', 'small', 'large'],
-        help='Split name to extract')
+    parser.add_argument('--size', default='tiny', choices=['tiny', 'small', 'large'],
+        help='Size name to get stat')
     parser.add_argument('--sample-rate', type=int, default=22050, help='Expected sampling rate')
 
     args = parser.parse_args()
