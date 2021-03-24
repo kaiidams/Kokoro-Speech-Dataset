@@ -77,7 +77,7 @@ included in this repository, but the metadata is included.
 To make .wav files of the dataset, run 
 
 ```
-$ download.sh
+$ bash download.sh
 ```
 
 to download the metadata from the project page. Then run
