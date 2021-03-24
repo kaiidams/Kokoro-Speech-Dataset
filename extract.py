@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import torchaudio
 import torch
@@ -6,6 +7,11 @@ import re
 import argparse
 
 def read_params_list(data_dir, size):
+    index_file = os.path.join(data_dir, 'index.json')
+    if not os.path.exists(index_file):
+        print(f"{sys.argv[0]}: error: `data/index.json' is not found. Please download it from the project page.")
+        sys.exit(1)
+
     with open(os.path.join(data_dir, 'index.json')) as f:
         params_list = json.load(f)
 
@@ -21,7 +27,7 @@ def check_data_directory(data_dir, params_list):
         id_ = params['id']
         audio_dir = os.path.join(data_dir, f'{id_}')
         if not os.path.isdir(audio_dir):
-            print(f"`{audio_dir}' is missing.")
+            print(f"{sys.argv[0]}: error: `{audio_dir}' is missing.")
             isok = False
     if isok:
         print("All audio directories exist.")
