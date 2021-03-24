@@ -17,8 +17,8 @@ Readings are estimated by
 and
 [UniDic Lite](https://pypi.org/project/unidic-lite/)
 from Kanji-Kana mixture writing system.
-Readings are in Romanized-like writing system
-which is similar to the writing system used by
+Readings are in romanized writing system
+which is similar to the format used by
 [Julius](https://github.com/julius-speech/julius).
 
 The audio clips were split and transcripts were aligned automatically by
@@ -33,7 +33,7 @@ The audio clips were split and transcripts were aligned automatically by
 
 ## File Format
 
-Metadata is provided in transcripts.txt. This file consists of one record per line,
+Metadata is provided in `metadata.csv`. This file consists of one record per line,
 delimited by the pipe character (0x7c). The fields are:
 
 - ID: this is the name of the corresponding .wav file
@@ -70,8 +70,7 @@ Total duration: 00:23:08
 ## How to get the data
 
 Because of its large data size of the dataset, audio files are not
-included in this repository, but the transcripts and audio split
-points are included.
+included in this repository, but the metadata are included.
 
 To get all WAV files of the dataset, run 
 
@@ -79,7 +78,8 @@ To get all WAV files of the dataset, run
 $ download.sh
 ```
 
-to download the audio files from archive.org and extract them. Then run
+to download the metadata from the project page.
+Audio files from archive.org and extract them. Then run
 
 ```
 $ pip install torchaudio
