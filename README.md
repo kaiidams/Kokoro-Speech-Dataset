@@ -43,7 +43,7 @@ Each audio file is a single-channel 16-bit PCM WAV with a sample rate of 22050 H
 
 ## Statistics
 
-The dataset is provided with different sizes, `large`, `small`, `tiny`. `small` and `tiny`
+The dataset is provided in different sizes, `large`, `small`, `tiny`. `small` and `tiny`
 don't share same clips. `large` contains all available clips, including `small` and `tiny`.
 
 ```
@@ -74,7 +74,7 @@ Total duration: 00:23:08
 Because of its large data size of the dataset, audio files are not
 included in this repository, but the metadata are included.
 
-To get all .wav files of the dataset, run 
+To make .wav files of the dataset, run 
 
 ```
 $ download.sh
