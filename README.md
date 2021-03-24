@@ -113,7 +113,7 @@ LJ Speech Dataset.
 Audio samples reads the first few sentences from Gon Gitsune
 which is not included in `small`.
 
-- [Audio Samples](https://kaiidams.github.io/Kokoro-Speech-Dataset/samples.html)
+- [Audio Samples](https://kaiidams.github.io/Kokoro-Speech-Dataset/tacotron.html)
 - [Pretrained model](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.0/tacotron-kokoro-20210324.zip)
 
 ## Books
