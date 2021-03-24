@@ -24,7 +24,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--output-dir', default='output', help='Output directory')
     parser.add_argument('--sample-dir', default='sample', help='Sample directory')
-    parser.add_argument('--num-samples', type=int, default=100, help='Number of samples')
+    parser.add_argument('--num-samples', type=int, default=10, help='Number of samples')
 
     args = parser.parse_args()
     main(args)

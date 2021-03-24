@@ -28,7 +28,8 @@ The audio clips were split and transcripts were aligned automatically by
 
 ## Sample data
 
-- Download
+[Listen](https://kaiidams.github.io/Kokoro-Speech-Dataset/samples.html)
+from your browser or download
 [Randomly sampled 100 clips](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.0/kokoro-sample-v1_0.zip).
 
 ## File Format
@@ -46,14 +47,14 @@ Each audio file is a single-channel 16-bit PCM WAV with a sample rate of 22050 H
 
 ```
 Large:
-Total clips: 34958
+Total clips: 34,958
 Min duration: 3.007 secs
 Max duration: 14.745 secs
 Mean duration: 4.978 secs
 Total duration: 48:20:24
 
 Small:
-Total clips: 8812
+Total clips: 8,812
 Min duration: 3.007 secs
 Max duration: 14.431 secs
 Mean duration: 4.951 secs
@@ -78,22 +79,25 @@ To get all WAV files of the dataset, run
 $ download.sh
 ```
 
-to download the metadata from the project page.
-Audio files from archive.org and extract them. Then run
+to download the metadata from the project page. Then run
 
 ```
 $ pip install torchaudio
 $ python extract.py --size tiny
 ```
 
-to get files for the tiny set under `./output` directory. RUn
+this shows a shell script example to download MP3 audio files
+from archive.org and extract them if you haven't done it already.
+
+After doing so, run the command again
 
 ```
-$ pip install torchaudio
-$ python extract.py --size large
+$ python extract.py --size tiny
 ```
 
-to get files for the large set under `./output` directory.
+to get files for the `tiny` set under `./output` directory. You can
+give another size name to the `--size` options to get dataset of 
+the size.
 
 ## Pretrained Tacotron model
 
@@ -107,7 +111,7 @@ LJ Speech Dataset.
 Audio samples reads the first few sentences from Gon Gitsune
 which is not included in the small set.
 
-- [Audio Samples](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.0/tacotron-kokoro-samples.zip)
+- [Audio Samples](https://kaiidams.github.io/Kokoro-Speech-Dataset/samples.html)
 - [Pretrained model](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.0/tacotron-kokoro-20210324.zip)
 
 ## Books
@@ -133,6 +137,11 @@ The dataset contains recordings from these books read by
     [Online text](http://www.aozora.gr.jp/cards/000121/files/628_14895.html)
 - [コーカサスの禿鷹 (Caucasus no Hagetaka)](https://librivox.org/caucasus-no-hagetaka-by-yoshio-toyoshima/) 0:13:04
     [Online text](http://www.aozora.gr.jp/cards/000906/files/42633_22951.html)
+
+## Similar project
+
+This project was also inspired by [CSS10](https://github.com/Kyubyong/css10), which
+contains audio clips of various languages from LibriVox.
 
 ## Changelog
 
