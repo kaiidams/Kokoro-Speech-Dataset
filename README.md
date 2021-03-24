@@ -103,6 +103,9 @@ dataset of the size.
 
 ## Pretrained Tacotron model
 
+- [Audio Samples](https://kaiidams.github.io/Kokoro-Speech-Dataset/tacotron.html)
+- [Pretrained model](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.0/tacotron-kokoro-20210324.zip)
+
 Pretrained [Tacotron](https://github.com/keithito/tacotron)
 model trained with Kokoro Speech Dataset
 and audio samples are available.
@@ -110,11 +113,8 @@ The model was trained for 21K steps with `small`.
 According to the above repo,
 "Speech started to become intelligible around 20K steps" with
 LJ Speech Dataset.
-Audio samples reads the first few sentences from Gon Gitsune
+Audio samples read the first few sentences from Gon Gitsune
 which is not included in `small`.
-
-- [Audio Samples](https://kaiidams.github.io/Kokoro-Speech-Dataset/tacotron.html)
-- [Pretrained model](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.0/tacotron-kokoro-20210324.zip)
 
 ## Books
 
