@@ -16,7 +16,7 @@ Readings are estimated by
 [MeCab](https://taku910.github.io/mecab/)
 and
 [UniDic Lite](https://pypi.org/project/unidic-lite/)
-from Kanji-Kana mixture text.
+from kanji-kana mixture text.
 Readings are romanized
 which are similar to the format used by
 [Julius](https://github.com/julius-speech/julius).
