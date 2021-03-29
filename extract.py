@@ -107,7 +107,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--data-dir', default='data', help='Data directory')
     parser.add_argument('--output-dir', default='output', help='Output directory')
-    parser.add_argument('--size', default='tiny', choices=['tiny', 'small', 'large'],
+    parser.add_argument('--size', default='tiny', choices=['tiny', 'small', 'small2', 'large'],
         help='Size name to extract')
     parser.add_argument('--sample-rate', type=int, default=22050, help='Expected sampling rate')
 

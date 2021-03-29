@@ -147,6 +147,7 @@ contains audio clips of various languages from LibriVox.
 
 ## Changelog
 
+- v1.1 Added more books
 - v1.0 Current release
 
 ## License
