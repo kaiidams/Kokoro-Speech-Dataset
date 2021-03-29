@@ -45,7 +45,7 @@ Each audio file is a single-channel 16-bit PCM WAV with a sample rate of 22050 H
 
 The dataset is provided in different sizes, `xlarge`, `large`, `small`, `tiny`.
 `large`, `small` and `tiny` don't share same clips.
-`xlarge` contains all available clips, including `small` and `tiny`.
+`xlarge` contains all available clips, including `large`, `small` and `tiny`.
 
 ```
 X Large:
