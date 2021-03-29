@@ -18,7 +18,7 @@ def read_params_list(data_dir, size):
     return [
         params
         for params in params_list
-        if (size == 'large') or (size in params['sizes'].split())
+        if (size == 'xlarge') or (size in params['sizes'].split())
     ]
 
 def check_data_directory(data_dir, params_list):
@@ -107,7 +107,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--data-dir', default='data', help='Data directory')
     parser.add_argument('--output-dir', default='output', help='Output directory')
-    parser.add_argument('--size', default='tiny', choices=['tiny', 'small', 'small2', 'large'],
+    parser.add_argument('--size', default='tiny', choices=['tiny', 'small', 'large', 'xlarge'],
         help='Size name to extract')
     parser.add_argument('--sample-rate', type=int, default=22050, help='Expected sampling rate')
 
