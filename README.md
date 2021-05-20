@@ -172,7 +172,7 @@ contains audio clips of various languages from LibriVox.
 
 All texts are from [Aozora Bunko](https://www.aozora.gr.jp/).
 Recordings by [ekzemplaro](https://librivox.org/reader/7044) from LibriVox.
-Alignment and annotation by [Katsuya Iida](katsuya.iida@gmail.com).
+Alignment and annotation by [Katsuya Iida](mail:katsuya.iida@gmail.com).
 
 ## License
 
