@@ -168,6 +168,12 @@ contains audio clips of various languages from LibriVox.
 - v1.1 Added more books
 - v1.0 Current release
 
+## Credits
+
+All texts are from [Aozora Bunko](https://www.aozora.gr.jp/).
+Recordings by [ekzemplaro](https://librivox.org/reader/7044) from LibriVox.
+Alignment and annotation by [Katsuya Iida](katsuya.iida@gmail.com).
+
 ## License
 
 This dataset is in the public domain in the USA (and most likely other countries as well).
