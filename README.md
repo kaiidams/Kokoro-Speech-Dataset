@@ -1,7 +1,7 @@
 # Kokoro Speech Dataset
 
 Kokoro Speech Dataset is a public domain Japanese speech dataset.
-It contains 34,958 short audio clips of a single speaker reading 9 novel books.
+It contains 43,253 short audio clips of a single speaker reading 14 novel books.
 The format of the metadata is similar to that of
 [LJ Speech](https://keithito.com/LJ-Speech-Dataset/) so that the dataset is compatible
 with modern speech synthesis systems.
@@ -43,16 +43,24 @@ Each audio file is a single-channel 16-bit PCM WAV with a sample rate of 22050 H
 
 ## Statistics
 
-The dataset is provided in different sizes, `large`, `small`, `tiny`. `small` and `tiny`
-don't share same clips. `large` contains all available clips, including `small` and `tiny`.
+The dataset is provided in different sizes, `xlarge`, `large`, `small`, `tiny`.
+`large`, `small` and `tiny` don't share same clips.
+`xlarge` contains all available clips, including `large`, `small` and `tiny`.
 
 ```
-Large:
-Total clips: 34958
+X Large:
+Total clips: 43253
 Min duration: 3.007 secs
-Max duration: 14.745 secs
-Mean duration: 4.978 secs
-Total duration: 48:20:24
+Max duration: 14.988 secs
+Mean duration: 4.993 secs
+Total duration: 59:59:40
+
+Large:
+Total clips: 22910
+Min duration: 3.007 secs
+Max duration: 14.988 secs
+Mean duration: 4.984 secs
+Total duration: 31:42:54
 
 Small:
 Total clips: 8812
@@ -135,6 +143,16 @@ The dataset contains recordings from these books read by
     [Online text](http://www.aozora.gr.jp/cards/000148/files/752_14964.html)
 - [雁 (Gan)](https://librivox.org/gan-by-ogai-mori/) 03:41:31
     [Online text](http://www.aozora.gr.jp/cards/000129/files/45224_19919.html)
+- [生まれいずる悩み (Umareizuru Nayami)](https://librivox.org/umareizuru-nayami-by-takeo-arishima/) 2:43:12
+    [Online text](http://www.aozora.gr.jp/cards/000025/files/1111_20600.html)
+- [硝子戸の中 (Garasudono uchi)](https://librivox.org/garasudono-uchi-by-natsume-soseki/) 2:39:53
+    [Online text](http://www.aozora.gr.jp/cards/000148/files/760_14940.html)
+- [永日小品 (Eijitsu Syohin)](https://librivox.org/eijitsu-syohin-by-soseki-natsume/) 2:33:54
+    [Online text](http://www.aozora.gr.jp/cards/000148/files/758_14936.html)
+- [蒲団 (Futon)](https://librivox.org/futon-by-katai-tayama/) 2:28:58
+    [Online text](http://www.aozora.gr.jp/cards/000214/files/1669_8259.html)
+- [高野聖 (Kouyahijiri)](https://librivox.org/kouyahijiri-by-kyoka-izumi/) 2:06:23
+    [Online text](http://www.aozora.gr.jp/cards/000050/files/521_20583.html)
 - [ごん狐 (Gon gitsune)](https://librivox.org/gongitsune-by-nankichi-niimi/) 0:15:42
     [Online text](http://www.aozora.gr.jp/cards/000121/files/628_14895.html)
 - [コーカサスの禿鷹 (Caucasus no Hagetaka)](https://librivox.org/caucasus-no-hagetaka-by-yoshio-toyoshima/) 0:13:04
@@ -147,7 +165,14 @@ contains audio clips of various languages from LibriVox.
 
 ## Changelog
 
+- v1.1 Added more books
 - v1.0 Current release
+
+## Credits
+
+All texts are from [Aozora Bunko](https://www.aozora.gr.jp/).
+Recordings by [ekzemplaro](https://librivox.org/reader/7044) from LibriVox.
+Alignment and annotation by [Katsuya Iida](mailto:katsuya.iida@gmail.com).
 
 ## License
 

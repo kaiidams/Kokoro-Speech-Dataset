@@ -10,7 +10,7 @@ def read_params_list(data_dir, split):
     return [
         params
         for params in params_list
-        if (split == 'large') or (split in params['sizes'].split())
+        if (split == 'xlarge') or (split in params['sizes'].split())
     ]
 
 def main(args):
@@ -41,7 +41,7 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--data-dir', default='data', help='Data directory')
-    parser.add_argument('--size', default='tiny', choices=['tiny', 'small', 'large'],
+    parser.add_argument('--size', default='tiny', choices=['tiny', 'small', 'large', 'xlarge'],
         help='Size name to get stat')
     parser.add_argument('--sample-rate', type=int, default=22050, help='Expected sampling rate')
 
