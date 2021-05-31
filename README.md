@@ -22,7 +22,7 @@ which are similar to the format used by
 [Julius](https://github.com/julius-speech/julius).
 
 The audio clips were split and transcripts were aligned automatically by
-[Voice100](https://github.com/kaiidams/voice100).
+[Kokoro-Align](https://github.com/kaiidams/Kokoro-Align).
 
 ## Sample data
 
