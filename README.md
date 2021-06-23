@@ -109,6 +109,8 @@ to get files for `tiny` under `./output` directory.
 You can give another size name to the `--size` option to get
 dataset of the size.
 
+You can specify the audio clip format to the `--format` option.
+
 ## Pretrained Tacotron model
 
 - [Audio Samples](https://kaiidams.github.io/Kokoro-Speech-Dataset/tacotron.html)
