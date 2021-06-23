@@ -49,9 +49,12 @@ def dump_script(data_dir, params_list):
         archive_file = os.path.basename(archive_url)
         print(f"unzip {archive_file} -d {id_}")
 
-def extract_wav_files(data_dir, params_list, sample_rate, output_dir):
+def extract_wav_files(data_dir, params_list, clip_format, sample_rate, output_dir):
 
-    os.makedirs(os.path.join(output_dir, 'wavs'), exist_ok=True)
+    clip_dir = 'wavs'
+    clip_ext = clip_format
+
+    os.makedirs(os.path.join(output_dir, clip_dir), exist_ok=True)
     max_int16 = torch.iinfo(torch.int16).max
 
     for params in params_list:
@@ -75,7 +78,7 @@ def extract_wav_files(data_dir, params_list, sample_rate, output_dir):
                     y = (y * max_int16 / torch.max(torch.abs(y))).to(torch.int16) 
                     current_file = audio_file
                     current_audio = y
-                output_file = os.path.join(output_dir, 'wavs', f'{id_}.wav')
+                output_file = os.path.join(output_dir, clip_dir, f'{id_}.{clip_ext}')
                 y = current_audio[:, audio_start:audio_end]
                 torchaudio.save(output_file, y, sample_rate)
 
@@ -100,7 +103,7 @@ def main(args):
     if not check_data_directory(args.data_dir, params_list):
         dump_script(args.data_dir, params_list)
     else:
-        extract_wav_files(args.data_dir, params_list, args.sample_rate, args.output_dir)
+        extract_wav_files(args.data_dir, params_list, args.format, args.sample_rate, args.output_dir)
         write_metafile(args.data_dir, params_list, args.output_dir)
 
 if __name__ == '__main__':
@@ -109,6 +112,8 @@ if __name__ == '__main__':
     parser.add_argument('--output-dir', default='output', help='Output directory')
     parser.add_argument('--size', default='tiny', choices=['tiny', 'small', 'large', 'xlarge'],
         help='Size name to extract')
+    parser.add_argument('--format', default='wav', choices=['wav', 'flac', 'mp3', 'ogg'],
+        help='Format of clips')
     parser.add_argument('--sample-rate', type=int, default=22050, help='Expected sampling rate')
 
     args = parser.parse_args()

@@ -165,6 +165,7 @@ contains audio clips of various languages from LibriVox.
 
 ## Changelog
 
+- v1.1.1 Added FLAC, MP3, OGG support
 - v1.1 Added more books
 - v1.0 Current release
 
