@@ -28,7 +28,7 @@ The audio clips were split and transcripts were aligned automatically by
 
 [Listen](https://kaiidams.github.io/Kokoro-Speech-Dataset/samples.html)
 from your browser or download
-[randomly sampled 100 clips](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.0/kokoro-speech-v1_0-sample.zip).
+[randomly sampled 100 clips](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.2/kokoro-speech-v1_2-sample-flac.zip).
 
 ## File Format
 
@@ -49,32 +49,32 @@ The dataset is provided in different sizes, `xlarge`, `large`, `small`, `tiny`.
 
 ```
 X Large:
-Total clips: 43253
+Total clips: 44788
 Min duration: 3.007 secs
-Max duration: 14.988 secs
-Mean duration: 4.993 secs
-Total duration: 59:59:40
+Max duration: 14.861 secs
+Mean duration: 4.718 secs
+Total duration: 58:41:39
 
 Large:
-Total clips: 22910
+Total clips: 23461
 Min duration: 3.007 secs
-Max duration: 14.988 secs
-Mean duration: 4.984 secs
-Total duration: 31:42:54
+Max duration: 14.861 secs
+Mean duration: 4.742 secs
+Total duration: 30:54:16
 
 Small:
-Total clips: 8812
+Total clips: 9199
 Min duration: 3.007 secs
-Max duration: 14.431 secs
-Mean duration: 4.951 secs
-Total duration: 12:07:12
+Max duration: 9.961 secs
+Mean duration: 4.687 secs
+Total duration: 11:58:31
 
 Tiny:
-Total clips: 285
-Min duration: 3.019 secs
-Max duration: 9.462 secs
-Mean duration: 4.871 secs
-Total duration: 00:23:08
+Total clips: 308
+Min duration: 3.030 secs
+Max duration: 8.092 secs
+Mean duration: 4.695 secs
+Total duration: 00:24:05
 ```
 
 ## How to get the data
@@ -167,6 +167,7 @@ contains audio clips of various languages from LibriVox.
 
 ## Changelog
 
+- v1.2 new metadata generated with a new align model
 - v1.1.1 Added FLAC, MP3, OGG support
 - v1.1 Added more books
 - v1.0 Current release
