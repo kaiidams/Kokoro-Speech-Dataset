@@ -75,7 +75,7 @@ def extract_wav_files(data_dir, params_list, clip_format, sample_rate, output_di
                     assert len(y.shape) == 2 and y.shape[0] == 1
                     assert y.dtype == torch.float32
                     assert sr == sample_rate
-                    y = (y * max_int16 / torch.max(torch.abs(y))).to(torch.int16) 
+                    y = (y * max_int16 / torch.max(torch.abs(y))).to(torch.int16)
                     current_file = audio_file
                     current_audio = y
                 output_file = os.path.join(output_dir, clip_dir, f'{id_}.{clip_ext}')
