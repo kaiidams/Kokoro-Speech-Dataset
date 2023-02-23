@@ -12,7 +12,7 @@ which is in the public domain. The audio clips
 are from
 [LibriVox project](https://librivox.org/),
 which is also in the public domain.
-Readings are estimated by 
+Readings are estimated by
 [MeCab](https://taku910.github.io/mecab/)
 and
 [UniDic Lite](https://pypi.org/project/unidic-lite/)
@@ -28,7 +28,7 @@ The audio clips were split and transcripts were aligned automatically by
 
 [Listen](https://kaiidams.github.io/Kokoro-Speech-Dataset/samples.html)
 from your browser or download
-[randomly sampled 100 clips](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.2/kokoro-speech-v1_2-sample-flac.zip).
+[randomly sampled 100 clips](https://github.com/kaiidams/Kokoro-Speech-Dataset/releases/download/1.3/kokoro-speech-v1_3-sample-flac.zip).
 
 ## File Format
 
@@ -82,7 +82,7 @@ Total duration: 00:24:05
 Because of its large data size of the dataset, audio files are not
 included in this repository, but the metadata is included.
 
-To make .wav files of the dataset, run 
+To make .wav files of the dataset, run
 
 ```
 $ bash download.sh
@@ -131,7 +131,7 @@ which is not included in `small`.
 The dataset contains recordings from these books read by
 [ekzemplaro](https://librivox.org/reader/7044)
 
-- [明暗 (Meian)](https://librivox.org/meian-by-soseki-natsume/) 16:39:29 
+- [明暗 (Meian)](https://librivox.org/meian-by-soseki-natsume/) 16:39:29
     [Online text](http://www.aozora.gr.jp/cards/000148/files/782_14969.html)
 - [こころ (Kokoro)](https://librivox.org/kokoro-by-soseki-natsume/) 08:46:41
     [Online text](http://www.aozora.gr.jp/cards/000148/files/773_14560.html)
@@ -167,10 +167,11 @@ contains audio clips of various languages from LibriVox.
 
 ## Changelog
 
-- v1.2 new metadata generated with a new align model
+- v1.3 Keep word separators in transcripts with '_'
+- v1.2 New metadata generated with a new align model
 - v1.1.1 Added FLAC, MP3, OGG support
 - v1.1 Added more books
-- v1.0 Current release
+- v1.0 Initial release
 
 ## Credits
 
@@ -181,5 +182,5 @@ Alignment and annotation by [Katsuya Iida](mailto:katsuya.iida@gmail.com).
 ## License
 
 This dataset is in the public domain in the USA (and most likely other countries as well).
-There are no restrictions on its use. For more information, please see: 
+There are no restrictions on its use. For more information, please see:
 [librivox.org/pages/public-domain](https://librivox.org/pages/public-domain).
