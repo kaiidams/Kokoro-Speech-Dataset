@@ -77,7 +77,13 @@ Mean duration: 4.695 secs
 Total duration: 00:24:05
 ```
 
-## How to get the data
+## Download
+
+Kokoro Speech Dataset (X Large) is available from [Download from Mozilla Data Collective](https://mozilladatacollective.com/datasets/cmmknsho4014wmf087kvq5rc6).
+
+## How to make the data
+
+2026-04-14: Some of ZIP archive files of LibriVox are not available anymore. You may have to download individual MP3 files to make the script work.
 
 Because of its large data size of the dataset, audio files are not
 included in this repository, but the metadata is included.
