@@ -79,7 +79,7 @@ Total duration: 00:24:05
 
 ## Download
 
-Kokoro Speech Dataset (X Large) is available from [Download from Mozilla Data Collective](https://mozilladatacollective.com/datasets/cmmknsho4014wmf087kvq5rc6).
+Kokoro Speech Dataset (X Large) is available from [Mozilla Data Collective](https://mozilladatacollective.com/datasets/cmmknsho4014wmf087kvq5rc6).
 
 ## How to make the data
 
